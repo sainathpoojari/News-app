@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-//  import './BlogItem.css'
+import React from 'react';
 
-export class BlogItem extends Component {
-    render() {
-        let { title, description, imgUrl, newsUrl, date, author, source } = this.props
+
+const BlogItem=(props)=>{
+        let { title, description, imgUrl, newsUrl, date, author, source } = props
         return (
             <div className='container '>
                 <div className="card my-4">
@@ -27,7 +26,7 @@ export class BlogItem extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default BlogItem;
