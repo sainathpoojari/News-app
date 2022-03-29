@@ -1,11 +1,11 @@
 import React, { useEffect ,useState} from 'react'
-import BlogItem from './BlogItem'
+import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 
-const Blog=(props)=> {
+const News=(props)=> {
 const [articles,setArticles]=useState([])
 const [loading,setLoading]=useState([true])
 const [page,setPage]=useState(1)
@@ -55,7 +55,7 @@ document.title = `${props.category}-THE NEWS`;
                         <div className='row'>
                             {articles.map((element) => {
                                 return <div className='col-md-4' key={element.url}>
-                                    <BlogItem title={element.title ? element.title.slice(0, 35) : ""}
+                                    <NewsItem title={element.title ? element.title.slice(0, 35) : ""}
                                         description={element.description ? element.description.slice(0, 87) : ""}
                                         imgUrl={element.urlToImage}
                                         newsUrl={element.url}
@@ -73,14 +73,14 @@ document.title = `${props.category}-THE NEWS`;
     
 }
 
-Blog.defaultProps = {
+News.defaultProps = {
     country: 'in',
     pageSize: 6,
     category: 'genral'
 }
-Blog.propTypes = {
+News.propTypes = {
     country: PropTypes.string,
     pageSize: PropTypes.number,
     category: PropTypes.string,
 }
-export default Blog;
+export default News;

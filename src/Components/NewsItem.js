@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const BlogItem=(props)=>{
+const NewsItem=(props)=>{
         let { title, description, imgUrl, newsUrl, date, author, source } = props
         return (
             <div className='container '>
@@ -29,4 +29,4 @@ const BlogItem=(props)=>{
     
 }
 
-export default BlogItem;
+export default NewsItem;
